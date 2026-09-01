@@ -15,9 +15,7 @@ app.use(express.urlencoded({ extended:true }));
 app.use("/auth/routes",authRoutes);
 app.use("/api/questions",test);
 
-
 connectDB();
 app.listen(PORT,()=>{
     console.log("Server dey run ejeh")
 })
-
