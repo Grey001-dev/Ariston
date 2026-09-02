@@ -12,9 +12,7 @@ class GoogleAuthButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
-      onPressed: () {
-        // Handle the Google sign up implementation here.
-      },
+      onPressed: onPressed,
       style: OutlinedButton.styleFrom(
         backgroundColor: Colors.white,
         side: BorderSide(color: Color(0xFFD1D5DB), width: 1.5),
