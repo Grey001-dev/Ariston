@@ -1,6 +1,4 @@
 import jwt from "jsonwebtoken";
-import dotenv from "dotenv"
-
 
 export const verifyToken=async(req,res,next)=>{
     const authHeaders=req.headers["authorization"];
@@ -15,7 +13,7 @@ export const verifyToken=async(req,res,next)=>{
         req.userId=decoded.id
         next()
     } catch (error) {
-        return res.status(500).json({message:"Error caught verifying user"})
         console.log('Error caught verifying user',error)
+        return res.status(500).json({message:"Error caught verifying user"})
     }
 }
