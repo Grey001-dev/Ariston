@@ -5,6 +5,10 @@ const questionSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    passageText:{
+        type:String,
+        default:""
+    },
 
     questionMedia: {
         type: String,
@@ -59,6 +63,10 @@ const questionSchema = new mongoose.Schema({
     difficulty:{
         type:String,
         default:''
+    },
+    cbtMode:{
+        type:Boolean,
+        default: false
     },
 
     year: {

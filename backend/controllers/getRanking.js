@@ -10,6 +10,6 @@ export const getRanking=async(req,res)=>{
     return res.status(200).json(topRankings);
     } catch (error) {
         console.error(error);
-        return res.status(400).json({message:"Error caught fetching rankings"})
+        return res.status(500).json({message:"Error caught fetching rankings"})
     }
 }

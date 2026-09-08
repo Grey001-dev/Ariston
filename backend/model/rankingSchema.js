@@ -6,7 +6,9 @@ const rankingSchema=new mongoose.Schema({
         ref: "User"
     },
     XP: {
-        type: Number
+        type: Number,
+        index:true
+    
     },
     tier: {
         type: Number

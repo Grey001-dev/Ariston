@@ -17,7 +17,7 @@ const sendRequest = async (req, res) => {
         //block someone from sending request to himself
         if (requesterId == recipientId){
             return res.status(400).json({
-                message: "You cannot send a request to yourself";
+                message: "You cannot send a request to yourself"
             });
         }
 
