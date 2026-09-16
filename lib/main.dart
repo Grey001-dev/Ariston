@@ -1,22 +1,32 @@
-import 'package:ariston/services/auth_service.dart';
-import 'package:ariston/sign_in_page.dart';
+import 'package:ariston/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() async{
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await dotenv.load(fileName: ".env");
-  await AuthService().initGoogleSignIn();
-  runApp(const MyApp());
+  await dotenv.load(fileName: '.env');
+  runApp(const AristonApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class AristonApp extends StatelessWidget {
+  const AristonApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Ariston',
-      home: const SignInPage(),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        useMaterial3: true,
+        fontFamily: 'Segoe UI',
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF003FB1)),
+        scaffoldBackgroundColor: Colors.white,
+        inputDecorationTheme: const InputDecorationTheme(
+          filled: false,
+          contentPadding: EdgeInsets.symmetric(horizontal: 14, vertical: 14),
+        ),
+      ),
+      home: const SignInScreen(),
     );
   }
 }
